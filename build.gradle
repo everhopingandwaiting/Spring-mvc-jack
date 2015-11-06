@@ -16,7 +16,7 @@ repositories {
 }
 
 gretty {
-    contextPath = "/bookstore"
+    contextPath = "/stu-manager"
     httpPort = 8888
     servletContainer = 'tomcat8'
 }
