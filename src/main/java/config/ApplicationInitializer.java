@@ -1,5 +1,6 @@
 package config;
 
+import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -21,4 +22,11 @@ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherSe
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }
+    @Override
+    protected ApplicationContextInitializer<?>[] getRootApplicationContextInitializers() {
+        return new ApplicationContextInitializer[]{
+                applicationContext -> applicationContext.getEnvironment().setActiveProfiles("prod")
+        };
+    }
+
 }

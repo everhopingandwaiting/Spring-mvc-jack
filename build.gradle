@@ -1,12 +1,24 @@
-import jdk.internal.org.objectweb.asm.Type
+
 
 group 'Spring-mvc-jack'
 version '1.0-SNAPSHOT'
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath('org.akhikhl.gretty:gretty:+')
+    }
+//    dependencies {
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
+//    }
+}
 
 apply plugin: 'java'
 apply plugin: 'war'
-apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
-
+//apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+apply plugin: 'org.akhikhl.gretty'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 version = '1.0'
@@ -17,7 +29,7 @@ repositories {
 
 gretty {
     contextPath = "/stu-manager"
-    httpPort = 8888
+    httpPort = 9999
     servletContainer = 'tomcat8'
 }
 
@@ -36,7 +48,7 @@ dependencies {
     testCompile("org.mockito:mockito-core:1.10.19")
 
     runtime("org.dbunit:dbunit:2.5.1")
-    runtime("com.h2database:h2:1.4.189")
+    compile("com.h2database:h2:1.4.189")
 
     providedCompile('javax.servlet:javax.servlet-api:3.1.0')
 }

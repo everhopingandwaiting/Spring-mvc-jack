@@ -25,11 +25,13 @@ $(document).ready(function () {
         }
     });
 
-    $("#deleteButton").click(function (e) {
+    $("#deletebtn").click(function (e) {
         var selected = [];
+        var ids = [];
         $("tbody :checkbox").each(function () {
             if ($(this).prop('checked')) {
                 selected.push($(this).attr('id'));
+                ids.push(selected.val());
             }
         });
 
@@ -37,5 +39,18 @@ $(document).ready(function () {
             alert("please select at least one book");
             e.preventDefault();
         }
+        $.ajax({
+            url: "/stu-manager/students/delete/"+ids,
+            method: 'post',
+            dataType: 'json',
+            async: false,
+            success: function () {
+                alert("删除成功！");
+            },
+            error: function () {
+                alert("删除失败！");
+            }
+        });
+
     });
 });
