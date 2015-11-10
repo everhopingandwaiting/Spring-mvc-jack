@@ -2048,7 +2048,7 @@
       <workItem from="1446906622448" duration="5799000" />
       <workItem from="1446987783357" duration="7801000" />
       <workItem from="1447033942399" duration="33012000" />
-      <workItem from="1447114460445" duration="8183000" />
+      <workItem from="1447114460445" duration="8192000" />
     </task>
     <task id="LOCAL-00001" summary="student  manager">
       <created>1446695579601</created>
@@ -2080,11 +2080,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447132520406</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="功能增加 : 增改查">
+      <created>1447132531509</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1447132531509</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178035000" />
+    <option name="totallyTimeSpent" value="178044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="301" y="94" width="1373" height="827" extended-state="0" />
