@@ -27,60 +27,28 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/service/StudentService.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/web/UserController.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/config/WebConfiguration.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/fonts/glyphicons-halflings-regular.eot" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/fonts/glyphicons-halflings-regular.ttf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/fonts/glyphicons-halflings-regular.woff2" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/student.h2.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/web/AuthenicationInteceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/Class.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/dao/ClassDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/web/formatter/Classformatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/Course.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/dao/CourseDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/web/formatter/CourseFormatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/config/DaoConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/Number.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/dao/NumberDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/web/formatter/NumberFormatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/Role.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/config/ServiceConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/Student.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/web/StudentController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/dao/StudentDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/web/formatter/StudentFormatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/service/StudentService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/config/WebConfiguration.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/stuMethod/addone.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/student/addone.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/js/book.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/css/bootstrap.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/date.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/date.sql" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/fragments.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/fonts/glyphicons-halflings-regular.svg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/gretty_ports.properties" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/js/jquery.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/login.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/student/user/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/student/user/login.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/student/user/register.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/schema.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/js/stu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/student.trace.db" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/students.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/students.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/stuMethod/update.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/student/update.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/student/update.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/books.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/book.html" afterPath="$PROJECT_DIR$/build/inplaceWebapp/WEB-INF/templates/student.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Spring-mvc-jack.iws" />
@@ -227,10 +195,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/web/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="45" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="45" />
+              <caret line="48" column="44" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="44" />
               <folding>
-                <element signature="e#989#990#0" expanded="true" />
-                <element signature="e#1025#1026#0" expanded="true" />
+                <element signature="e#976#977#0" expanded="true" />
+                <element signature="e#1012#1013#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -260,7 +228,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/web/AuthenicationInteceptor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="85" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
+              <caret line="28" column="85" selection-start-line="28" selection-start-column="85" selection-end-line="28" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -295,8 +263,8 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding>
-                <element signature="e#2078#2079#0" expanded="true" />
-                <element signature="e#2173#2174#0" expanded="true" />
+                <element signature="e#2080#2081#0" expanded="true" />
+                <element signature="e#2176#2177#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -316,7 +284,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/StudentDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="1.2047058">
-              <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+              <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -2080,7 +2048,7 @@
       <workItem from="1446906622448" duration="5799000" />
       <workItem from="1446987783357" duration="7801000" />
       <workItem from="1447033942399" duration="33012000" />
-      <workItem from="1447114460445" duration="8133000" />
+      <workItem from="1447114460445" duration="8183000" />
     </task>
     <task id="LOCAL-00001" summary="student  manager">
       <created>1446695579601</created>
@@ -2106,11 +2074,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447132114005</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="功能增加 : 增改查">
+      <created>1447132520406</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1447132520406</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177985000" />
+    <option name="totallyTimeSpent" value="178035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="301" y="94" width="1373" height="827" extended-state="0" />
@@ -2347,6 +2321,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29005525">
           <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2400,6 +2375,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2414,6 +2392,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2429,6 +2410,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2448,6 +2430,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2582,8 +2565,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding>
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2173#2174#0" expanded="true" />
+            <element signature="e#2080#2081#0" expanded="true" />
+            <element signature="e#2176#2177#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2607,10 +2590,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/web/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="45" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="45" />
+          <caret line="48" column="44" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="44" />
           <folding>
-            <element signature="e#989#990#0" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#976#977#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2626,7 +2609,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/web/AuthenicationInteceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="85" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
+          <caret line="28" column="85" selection-start-line="28" selection-start-column="85" selection-end-line="28" selection-end-column="85" />
           <folding />
         </state>
       </provider>
@@ -2661,7 +2644,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/StudentDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2047058">
-          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+          <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
           <folding />
         </state>
       </provider>
