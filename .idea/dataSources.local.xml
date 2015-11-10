@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="H2 - student" uuid="a12d7834-84ea-4f6a-8128-fac335d9c0b8">
+      <secret-storage>master_key</secret-storage>
+      <user-name>sa</user-name>
+      <schema-pattern>STUDENT.PUBLIC</schema-pattern>
+      <default-schemas>STUDENT.PUBLIC</default-schemas>
+    </data-source>
+    <data-source name="H2 - stusys@localhost" uuid="ed895907-5898-483c-b630-f63494549030">
+      <secret-storage>master_key</secret-storage>
+      <user-name>sa</user-name>
+      <schema-pattern>STUSYS.PUBLIC</schema-pattern>
+      <default-schemas>STUSYS.PUBLIC</default-schemas>
+    </data-source>
+  </component>
+</project>

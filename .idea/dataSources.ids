@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="H2 - student" uuid="a12d7834-84ea-4f6a-8128-fac335d9c0b8">
+    <database-info product="H2" version="1.3.176 (2014-04-05)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.3.176 (2014-04-05)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="PUBLIC" catalog="STUDENT"/>
+    <table name="CLASSES" schema="PUBLIC" catalog="STUDENT" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfNUFDODVFRDBfMkJEOV80ODUxXzk0NkZfOEZGODEyQzk1ODI2KQ==" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_5" columns="ID"/>
+      <exported-key name="FK_CLASS" table="STUDENTS" schema="PUBLIC" catalog="STUDENT" columns="CLASS_ID"/>
+    </table>
+    <table name="COURSES" schema="PUBLIC" catalog="STUDENT" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfRjU5QzgyQjRfRDdDNl80OTlDX0IxODZfNkNFQkU5N0U4NDE3KQ==" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_6" columns="ID"/>
+      <exported-key name="FK_COURSE" table="STUDENTS_COURSES" schema="PUBLIC" catalog="STUDENT" columns="COURSE_ID"/>
+    </table>
+    <table name="NUMBERS" schema="PUBLIC" catalog="STUDENT" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfREExQkUwQ0RfMDZDRF80MTM2XzgxOENfQjhBQjgxQThCOEJEKQ==" autoIncrement="true"/>
+      <column name="PREFIX" sqlType="CHAR" precision="7" scale="0" nullable="false" jdbcType="1"/>
+      <column name="SUFFIX" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="CONSTRAINT_B" columns="ID"/>
+      <exported-key name="FK_NUMBER" table="STUDENTS" schema="PUBLIC" catalog="STUDENT" columns="NUMBER_ID"/>
+    </table>
+    <table name="ROLES" schema="PUBLIC" catalog="STUDENT" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfNEM0RTczMENfNTUwMl80OTc4X0I3QzlfOTUwQkU3MjdBNjNGKQ==" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_4" columns="ID"/>
+      <exported-key name="FK_ROLE" table="STUDENTS_ROLES" schema="PUBLIC" catalog="STUDENT" columns="ROLE_ID"/>
+    </table>
+    <table name="STUDENTS" schema="PUBLIC" catalog="STUDENT" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfNEVDNDMyQTFfQzFEOV80NjZBX0IzNDJfMTAwNDkyODM3QTUyKQ==" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NUMBER_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="CLASS_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_9" columns="ID"/>
+      <foreign-key name="FK_CLASS" columns="CLASS_ID" ref-table="CLASSES" ref-schema="PUBLIC" ref-catalog="STUDENT" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_NUMBER" columns="NUMBER_ID" ref-table="NUMBERS" ref-schema="PUBLIC" ref-catalog="STUDENT" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <exported-key name="FK_STUDENT" table="STUDENTS_COURSES" schema="PUBLIC" catalog="STUDENT" columns="STUDENT_ID"/>
+      <exported-key name="FK_STUDENT1" table="STUDENTS_ROLES" schema="PUBLIC" catalog="STUDENT" columns="STUDENT_ID"/>
+      <index name="FK_CLASS_INDEX_9" unique="false" columns="CLASS_ID"/>
+      <index name="FK_NUMBER_INDEX_9" unique="false" columns="NUMBER_ID"/>
+    </table>
+    <table name="STUDENTS_COURSES" schema="PUBLIC" catalog="STUDENT" type="TABLE">
+      <column name="STUDENT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="COURSE_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_93" columns="STUDENT_ID,COURSE_ID"/>
+      <foreign-key name="FK_COURSE" columns="COURSE_ID" ref-table="COURSES" ref-schema="PUBLIC" ref-catalog="STUDENT" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_STUDENT" columns="STUDENT_ID" ref-table="STUDENTS" ref-schema="PUBLIC" ref-catalog="STUDENT" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FK_COURSE_INDEX_9" unique="false" columns="COURSE_ID"/>
+      <index name="FK_STUDENT_INDEX_9" unique="false" columns="STUDENT_ID"/>
+    </table>
+    <table name="STUDENTS_ROLES" schema="PUBLIC" catalog="STUDENT" type="TABLE">
+      <column name="STUDENT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ROLE_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_8" columns="STUDENT_ID,ROLE_ID"/>
+      <foreign-key name="FK_ROLE" columns="ROLE_ID" ref-table="ROLES" ref-schema="PUBLIC" ref-catalog="STUDENT" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_STUDENT1" columns="STUDENT_ID" ref-table="STUDENTS" ref-schema="PUBLIC" ref-catalog="STUDENT" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FK_ROLE_INDEX_8" unique="false" columns="ROLE_ID"/>
+      <index name="FK_STUDENT1_INDEX_8" unique="false" columns="STUDENT_ID"/>
+    </table>
+  </data-source>
+  <data-source name="H2 - stusys@localhost" uuid="ed895907-5898-483c-b630-f63494549030">
+    <database-info product="H2" version="1.4.189 (2015-09-13)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.189 (2015-09-13)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="PUBLIC" catalog="STUSYS"/>
+    <table name="CLASSES" schema="PUBLIC" catalog="STUSYS" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_5" columns="ID"/>
+      <exported-key name="FKRFIPLNIDULX9742DA7B4CHSHY" table="STUDENTS" schema="PUBLIC" catalog="STUSYS" columns="CLASS_ID"/>
+    </table>
+    <table name="COURSES" schema="PUBLIC" catalog="STUSYS" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfRjhDQTg2QzNfRDFDQl80MkU2Xzg0NDlfMkFDMjFCMjNDOTI0KQ==" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_6" columns="ID"/>
+      <exported-key name="FKGOIY0LNTL3VT8IVMN86SFBEBS" table="STUDENTS_COURSES" schema="PUBLIC" catalog="STUSYS" columns="COURSE_ID"/>
+    </table>
+    <table name="NUMBERS" schema="PUBLIC" catalog="STUSYS" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfNTQ1OTY1OTdfMjlGNV80M0M3XzkyNEJfMkIzMjFCNjFFMzg3KQ==" autoIncrement="true"/>
+      <column name="PREFIX" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="SUFFIX" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_B" columns="ID"/>
+      <exported-key name="FK9HWGDEKOCY2HF28LYYE09NECA" table="STUDENTS" schema="PUBLIC" catalog="STUSYS" columns="NUMBER_ID"/>
+    </table>
+    <table name="ROLES" schema="PUBLIC" catalog="STUSYS" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfNUI5ODc4NTZfMjM2NV80RTU1X0JERUVfMTc4RkY5RTU0Q0EzKQ==" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_4" columns="ID"/>
+      <exported-key name="FK6SDQBT51NXSHMN94PGKX5HK8N" table="STUDENTS_ROLES" schema="PUBLIC" catalog="STUSYS" columns="ROLE_ID"/>
+    </table>
+    <table name="STUDENTS" schema="PUBLIC" catalog="STUSYS" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfMTA3MzdGQzVfNTE4MV80MkNBX0FFNENfQ0NDMzFDRUUyODQ3KQ==" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CLASS_ID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NUMBER_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_9" columns="ID"/>
+      <foreign-key name="FKRFIPLNIDULX9742DA7B4CHSHY" columns="CLASS_ID" ref-table="CLASSES" ref-schema="PUBLIC" ref-catalog="STUSYS" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK9HWGDEKOCY2HF28LYYE09NECA" columns="NUMBER_ID" ref-table="NUMBERS" ref-schema="PUBLIC" ref-catalog="STUSYS" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <exported-key name="FKGP33QJLS7CX80AV8LYR80U21L" table="STUDENTS_COURSES" schema="PUBLIC" catalog="STUSYS" columns="STUDENT_ID"/>
+      <exported-key name="FKF6VS78LVRVVH9G3SOCJ5QR9GY" table="STUDENTS_ROLES" schema="PUBLIC" catalog="STUSYS" columns="STUDENT_ID"/>
+      <index name="FK9HWGDEKOCY2HF28LYYE09NECA_INDEX_9" unique="false" columns="NUMBER_ID"/>
+      <index name="FKRFIPLNIDULX9742DA7B4CHSHY_INDEX_9" unique="false" columns="CLASS_ID"/>
+    </table>
+    <table name="STUDENTS_COURSES" schema="PUBLIC" catalog="STUSYS" type="TABLE">
+      <column name="STUDENT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="COURSE_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FKGOIY0LNTL3VT8IVMN86SFBEBS" columns="COURSE_ID" ref-table="COURSES" ref-schema="PUBLIC" ref-catalog="STUSYS" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FKGP33QJLS7CX80AV8LYR80U21L" columns="STUDENT_ID" ref-table="STUDENTS" ref-schema="PUBLIC" ref-catalog="STUSYS" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FKGOIY0LNTL3VT8IVMN86SFBEBS_INDEX_9" unique="false" columns="COURSE_ID"/>
+      <index name="FKGP33QJLS7CX80AV8LYR80U21L_INDEX_9" unique="false" columns="STUDENT_ID"/>
+    </table>
+    <table name="STUDENTS_ROLES" schema="PUBLIC" catalog="STUSYS" type="TABLE">
+      <column name="STUDENT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ROLE_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_8" columns="ROLE_ID,STUDENT_ID"/>
+      <foreign-key name="FK6SDQBT51NXSHMN94PGKX5HK8N" columns="ROLE_ID" ref-table="ROLES" ref-schema="PUBLIC" ref-catalog="STUSYS" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FKF6VS78LVRVVH9G3SOCJ5QR9GY" columns="STUDENT_ID" ref-table="STUDENTS" ref-schema="PUBLIC" ref-catalog="STUSYS" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FKF6VS78LVRVVH9G3SOCJ5QR9GY_INDEX_8" unique="false" columns="STUDENT_ID"/>
+    </table>
+  </data-source>
+</component>

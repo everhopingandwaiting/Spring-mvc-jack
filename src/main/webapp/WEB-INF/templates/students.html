@@ -1,0 +1,61 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width-device-width, initial-scale-1"/>
+    <meta http-equiv="x-ua-compatible" content="ie-edge"/>
+    <link href="../../css/bootstrap.css"
+          th:href="@{/css/bootstrap.css}"
+          rel="stylesheet" type="text/css"/>
+    <title>Welcome to student manager system</title>
+</head>
+<body>
+<div class="page-header">
+    <h1>Welcome</h1>
+</div>
+<div class="container">
+    <div class="col-md-offset-1 col-md-10" th:if="${#lists.size(studentlist)==0}">
+        <h2>No Students found! Please <a th:href="@{/student/addone}">Add One Student!</a></h2>
+
+    </div>
+    <div class="col-md-offset-1 col-md-10">
+        <form method="GET"
+              th:action="@{/student}"
+              th:object="${studentlist}"
+                >
+            <table class="table table-striped" th:if="${#lists.size(studentlist)>0}">
+                <thead>
+                <th><input id="selectAllButton" type="checkbox"/></th>
+                <th>name</th>
+                <th>number</th>
+                <th> course</th>
+                <th> class</th>
+                </thead>
+                <tbody>
+                <tr th:each="student : ${studentlist}" th:object="${student}">
+                    <td><input name="id" th:value="*{ID}" type="checkbox"/></td>
+                    <td><a th:text="*{name}" href="#" th:href="@{/student/update/{id}(id=*{ID})}">stu1</a></td>
+                    <td th:text="*{{number}}">0010010</td>
+                    <td th:text="*{{courses}}">java</td>
+                    <td th:text="*{{aClass}}">class1</td>
+                </tr>
+                </tbody>
+            </table>
+            <button formaction="/stuMethod/addone" th:formaction="@{/student/addone}" name="new"
+                    class="btn btn-default">Add One Student
+            </button>
+            <button data-name="deletebtn" class="btn btn-default" name="deletebtn" id="deletebtn">Delete the selected
+                Students
+            </button>
+        </form>
+    </div>
+</div>
+<script src="../../js/jquery.js"
+        th:src="@{/js/jquery.js}"
+        type="text/javascript"></script>
+<script src="../../js/stu.js" th:src="@{/js/stu.js}" type="text/javascript"
+        ></script>
+</body>
+</html>
