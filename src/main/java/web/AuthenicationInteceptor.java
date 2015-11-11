@@ -18,12 +18,20 @@ public class AuthenicationInteceptor extends HandlerInterceptorAdapter {
         Student student = (Student) request.getSession().getAttribute("student");
         String url = request.getRequestURI();
         boolean isRoot = url.endsWith(request.getContextPath() + "/");
-        boolean isLogin = url.endsWith(request.getContextPath() + "/login");
-        if (isRoot || isLogin) {
+        boolean isLogin = url.endsWith(request.getContextPath() + "/user/login");
+
+        boolean isRegister = url.endsWith((request.getContextPath() + "/user/register"));
+        boolean isRegisterit = url.endsWith((request.getContextPath() + "/user/registerit"));
+        boolean isLoginit = url.endsWith((request.getContextPath() + "/user/loginit"));
+        boolean isStuUpdate = url.endsWith((request.getContextPath() + "/student/update"));
+        if (isRoot || isLogin || isRegister || isRegisterit || isLoginit) {
             return true;
         } else if (student == null) {
             response.sendRedirect(request.getContextPath() + "/");
             return false;
+        } else if (url.endsWith(request.getContextPath() + "student/update") && (student.getRole().getName().equals("user"))) {
+            return true;
+
         } else {
 
             if (url.endsWith(request.getContextPath() + "students") && !(student.isAdmin())) {

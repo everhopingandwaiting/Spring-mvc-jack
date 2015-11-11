@@ -59,7 +59,7 @@ public class DaoConfig {
                 .scanPackages("domain")
                 .setProperty("hibernate.show_sql", "true")
                 .setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect")
-                .setProperty("hibernate.hbm2ddl.auto", "update")
+                .setProperty("hibernate.hbm2ddl.auto", "create-drop")
                 .buildSessionFactory();
     }
 

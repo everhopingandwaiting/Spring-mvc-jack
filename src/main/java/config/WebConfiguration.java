@@ -14,6 +14,7 @@ import web.AuthenicationInteceptor;
 import web.formatter.Classformatter;
 import web.formatter.CourseFormatter;
 import web.formatter.NumberFormatter;
+import web.formatter.Rolesformatter;
 
 /**
  * Created by john on 15-10-14.
@@ -26,7 +27,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         super.addViewControllers(registry);
-        registry.addRedirectViewController("/", "/students");
+        registry.addRedirectViewController("/", "/user/login");
     }
 
     @Bean
@@ -71,11 +72,11 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        registry.addFormatter(new Classformatter());
+
         registry.addFormatter(new CourseFormatter());
         registry.addFormatter(new NumberFormatter());
-
-
+        registry.addFormatter(new Rolesformatter());
+        registry.addFormatter(new Classformatter());
     }
 
 }

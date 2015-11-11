@@ -26,8 +26,16 @@ public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private int ID;
+
     private String name;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     private String password;
 
     public String getPassword() {
@@ -48,15 +56,26 @@ public class Student implements Serializable {
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "STUDENTS_COURSES", joinColumns = @JoinColumn(name =
-
             "STUDENT_ID"), inverseJoinColumns = @JoinColumn(name =
             "COURSE_ID"))
     private List<Course> courses;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "STUDENTS_ROLES", joinColumns =
-    @JoinColumn(name = "STUDENT_ID"), inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
-    private Set<Role> roles;
+    //    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinTable(name = "STUDENTS_ROLES", joinColumns = @JoinColumn(name =
+//            "STUDENT_ID"), inverseJoinColumns = @JoinColumn(name =
+//            "ROLE_ID"))
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "ROLE_ID", nullable = false)
+    private Role role;
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
 
     public int getID() {
         return ID;
@@ -66,13 +85,7 @@ public class Student implements Serializable {
         this.ID = ID;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Number getNumber() {
         return number;
@@ -99,6 +112,20 @@ public class Student implements Serializable {
     }
 
     public boolean isAdmin() {
-        return roles.stream().filter(role -> role.getName().equals("ADMIN")).count() > 0;
+//        return role.stream().filter(role -> role.getName().equals("admin")).count() > 0;
+        return role.getName().equals("admin");
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", number=" + number +
+                ", aClass=" + aClass +
+                ", courses=" + courses +
+                ", role=" + role +
+                '}';
     }
 }

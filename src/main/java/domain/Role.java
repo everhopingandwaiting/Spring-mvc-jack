@@ -1,6 +1,8 @@
 package domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -8,28 +10,20 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "ROLES")
-public class Role {
+public class Role implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(nullable = false)
+
     private String name;
-    @Column(nullable = false)
-    private String password;
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
-    public String getPassword() {
-        return password;
-    }
-
-    @ManyToMany
-    @JoinTable(name = "STUDENTS_ROLES",
-            joinColumns = @JoinColumn(name = "ROLE_ID"),
-            inverseJoinColumns = @JoinColumn(name = "STUDENT_ID"))
-    private Set<Student> students;
+    //    @ManyToMany
+//    @JoinTable(name = "STUDENTS_ROLES",
+//            joinColumns = @JoinColumn(name = "ROLE_ID"),
+//            inverseJoinColumns = @JoinColumn(name = "STUDENT_ID"))
+    @OneToOne(mappedBy = "role")
+    private Student student;
 
     public int getId() {
         return id;
@@ -47,11 +41,11 @@ public class Role {
         this.name = name;
     }
 
-    public Set<Student> getStudents() {
-        return students;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudents(Set<Student> students) {
-        this.students = students;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 }

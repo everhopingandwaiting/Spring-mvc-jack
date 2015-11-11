@@ -5,7 +5,16 @@ $(document).ready(function () {
     });
 
     $("#selectAllButton").click(function () {
-        $(":checkbox").prop("checked", true);
+        var count = 0;
+        if (count == 1) {
+            $(":checkbox").prop("checked", false);
+            --count;
+        }
+        if (count == 0) {
+            $(":checkbox").prop("checked", true);
+            ++count;
+        }
+
     });
 
     $("tbody :checkbox").click(function () {
@@ -53,4 +62,5 @@ $(document).ready(function () {
         });
 
     });
+    //$('#menu').dropdown('toggle')
 });

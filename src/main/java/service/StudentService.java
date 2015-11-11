@@ -37,4 +37,10 @@ public class StudentService {
         studentDao.update(student);
 
     }
+
+    public Student findUser(Student stulogin) {
+
+        List<Student> studentList = studentDao.findByUserNameAndPwd(stulogin.getName(), stulogin.getPassword());
+        return studentList.get(0);
+    }
 }

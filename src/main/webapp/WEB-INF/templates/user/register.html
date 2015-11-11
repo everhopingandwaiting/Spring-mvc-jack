@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Registration</title>
-    <link href="../../../../css/bootstrap.css"
+    <link href="../../../css/bootstrap.css"
           th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
 </head>
 <body>
@@ -19,33 +19,52 @@
     </div>
     <div class="row" style="margin-top: 20px;">
         <form class="form-horizontal col-md-offset-3" method="post"
-              action="../../students.html" th:action="@{/user/register}"
-              th:object="${student}">
-            <div class="form-group" th:if="${#fields.hasErrors('*')}">
-                <li class="text-danger" th:each="error : ${#fields.errors('*')}" th:text="${error}">Incorrect Input</li>
-            </div>
+              action="../students.html" th:action="@{/user/registerit}"
+              th:object="${stureg}">
 
-            <div th:class="${#fields.hasErrors('name')} ? 'form-group has-error' : 'form-group'">
+
+            <div class=" form-group" th:class="form-group">
                 <label th:for="${#ids.next('name')}" class="col-md-2 control-label">Username</label>
 
                 <div class="col-md-4">
                     <input type="text" th:field="*{name}" class="form-control"/>
                 </div>
             </div>
+            <div class=" form-group" th:class="form-group">
+                <label th:for="${#ids.next('number')}" class="col-md-2 control-label">Number</label>
 
-            <div th:class="${#fields.hasErrors('password')} ? 'form-group has-error' : 'form-group'">
+                <div class="col-md-4">
+                    <input type="text" th:field="*{{number}}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group" th:class="form-group">
                 <label th:for="${#ids.next('password')}" class="col-md-2 control-label">Password</label>
 
                 <div class="col-md-4">
-                    <input type="text" th:field="*{password}" class="form-control"/>
+                    <input type="password" th:field="*{password}" class="form-control"/>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-md-2 control-label">Confirm</label>
 
-                <div class="col-md-4">
-                    <input type="password" name="password" class="form-control"/>
+            <!--<div class="form-group" th:class="form-group">-->
+            <!--<label th:for="${#ids.next('role')}" class="col-md-2 control-label">roles</label>-->
+
+            <!--<div class="col-md-4">-->
+            <!--<input type="password" th:field="*{{roles}}" class="form-control"/>-->
+            <!--</div>-->
+            <!--</div>-->
+
+
+            <div class="form-group ">
+                <label class="col-md-2 control-label">Role</label>
+
+                <div class="dropdown col-md-4">
+
+                    <select name="userproperty" class="selectpicker ">
+                        <option id="user" value="user">Normaluser</option>
+                        <option id="admin" value="admin">Adminstrator</option>
+
+                    </select>
                 </div>
             </div>
 

@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "NUMBERS")
+@Table(name = "NUMBERS", uniqueConstraints = @UniqueConstraint(columnNames = {"PREFIX", "SUFFIX"}))
 public class Number implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

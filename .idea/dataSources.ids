@@ -76,29 +76,29 @@
       <exported-key name="FKRFIPLNIDULX9742DA7B4CHSHY" table="STUDENTS" schema="PUBLIC" catalog="STUSYS" columns="CLASS_ID"/>
     </table>
     <table name="COURSES" schema="PUBLIC" catalog="STUSYS" type="TABLE">
-      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfRjhDQTg2QzNfRDFDQl80MkU2Xzg0NDlfMkFDMjFCMjNDOTI0KQ==" autoIncrement="true"/>
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfMTYxRTkwM0ZfQTIxRl80MjQ2Xzg4NTBfMjlBODNENDE2MTRDKQ==" autoIncrement="true"/>
       <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="CONSTRAINT_6" columns="ID"/>
       <exported-key name="FKGOIY0LNTL3VT8IVMN86SFBEBS" table="STUDENTS_COURSES" schema="PUBLIC" catalog="STUSYS" columns="COURSE_ID"/>
     </table>
     <table name="NUMBERS" schema="PUBLIC" catalog="STUSYS" type="TABLE">
-      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfNTQ1OTY1OTdfMjlGNV80M0M3XzkyNEJfMkIzMjFCNjFFMzg3KQ==" autoIncrement="true"/>
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfRUFFREQ4OUFfMTRBOF80NUM5XzhDODdfRDE0Rjg1OTg1RkJFKQ==" autoIncrement="true"/>
       <column name="PREFIX" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="SUFFIX" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="CONSTRAINT_B" columns="ID"/>
       <exported-key name="FK9HWGDEKOCY2HF28LYYE09NECA" table="STUDENTS" schema="PUBLIC" catalog="STUSYS" columns="NUMBER_ID"/>
+      <index name="UKO0LB3RDSH64E3VXHQWH1HMPRQ_INDEX_B" unique="true" columns="PREFIX,SUFFIX"/>
     </table>
     <table name="ROLES" schema="PUBLIC" catalog="STUSYS" type="TABLE">
-      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfNUI5ODc4NTZfMjM2NV80RTU1X0JERUVfMTc4RkY5RTU0Q0EzKQ==" autoIncrement="true"/>
-      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfQjVDQzI4MTNfNDhEOV80RDg3X0E1NzlfMjBFODk4NDdGMUQ2KQ==" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="CONSTRAINT_4" columns="ID"/>
       <exported-key name="FK6SDQBT51NXSHMN94PGKX5HK8N" table="STUDENTS_ROLES" schema="PUBLIC" catalog="STUSYS" columns="ROLE_ID"/>
     </table>
     <table name="STUDENTS" schema="PUBLIC" catalog="STUSYS" type="TABLE">
-      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfMTA3MzdGQzVfNTE4MV80MkNBX0FFNENfQ0NDMzFDRUUyODQ3KQ==" autoIncrement="true"/>
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfQUJFQzEyMERfRjIwOF80MUY4X0FCMTBfODk1NEI0NTA5NTBFKQ==" autoIncrement="true"/>
       <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="CLASS_ID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="NUMBER_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="CONSTRAINT_9" columns="ID"/>
@@ -112,9 +112,9 @@
     <table name="STUDENTS_COURSES" schema="PUBLIC" catalog="STUSYS" type="TABLE">
       <column name="STUDENT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="COURSE_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_93" columns="COURSE_ID,STUDENT_ID"/>
       <foreign-key name="FKGOIY0LNTL3VT8IVMN86SFBEBS" columns="COURSE_ID" ref-table="COURSES" ref-schema="PUBLIC" ref-catalog="STUSYS" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
       <foreign-key name="FKGP33QJLS7CX80AV8LYR80U21L" columns="STUDENT_ID" ref-table="STUDENTS" ref-schema="PUBLIC" ref-catalog="STUSYS" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
-      <index name="FKGOIY0LNTL3VT8IVMN86SFBEBS_INDEX_9" unique="false" columns="COURSE_ID"/>
       <index name="FKGP33QJLS7CX80AV8LYR80U21L_INDEX_9" unique="false" columns="STUDENT_ID"/>
     </table>
     <table name="STUDENTS_ROLES" schema="PUBLIC" catalog="STUSYS" type="TABLE">

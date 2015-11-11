@@ -12,7 +12,7 @@ import service.StudentService;
 @Configuration
 public class ServiceConfiguration {
     @Bean
-    @Autowired
+//    @Autowired
     public StudentService studentService(StudentDao studentDao) {
         return new StudentService(studentDao);
     }

@@ -1,5 +1,6 @@
 package dao;
 
+import domain.Role;
 import domain.Student;
 import org.hibernate.Query;
 import org.springframework.orm.hibernate5.HibernateTemplate;
@@ -22,14 +23,6 @@ public class StudentDao implements Serializable {
         this.template = template;
     }
 
-    public HibernateTemplate getTemplate() {
-        return template;
-    }
-
-    public void setTemplate(HibernateTemplate template) {
-        this.template = template;
-
-    }
 
     @Transactional(readOnly = true)
     public List<Student> findAll() {
@@ -47,11 +40,23 @@ public class StudentDao implements Serializable {
     }
 
     public void update(Student student) {
+        if (student.getRole() == null) {
+            Role role = new Role();
+            role.setName("user");
+            student.setRole(role);
+        }
+
         template.saveOrUpdate(student);
     }
 
     public void persist(Student student) {
-        template.persist(student);
+        if (student.getRole() == null) {
+            Role role = new Role();
+            role.setName("user");
+            student.setRole(role);
+        }
+
+        template.saveOrUpdate(student);
 
     }
 
@@ -74,5 +79,9 @@ public class StudentDao implements Serializable {
         query.setParameter("ids", ids);
         return query.list();
 
+    }
+
+    public List<Student> findByUserNameAndPwd(String name, String password) {
+        return (List<Student>) template.find("FROM Student stu where stu.name =? and stu.password = ?", name, password);
     }
 }
