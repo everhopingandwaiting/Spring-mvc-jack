@@ -43,7 +43,7 @@ public class StudentDao implements Serializable {
         if (student.getRole() == null) {
             Role role = new Role();
             role.setName("user");
-            student.setRole(role);
+
         }
 
         template.saveOrUpdate(student);
@@ -53,7 +53,7 @@ public class StudentDao implements Serializable {
         if (student.getRole() == null) {
             Role role = new Role();
             role.setName("user");
-            student.setRole(role);
+
         }
 
         template.saveOrUpdate(student);
