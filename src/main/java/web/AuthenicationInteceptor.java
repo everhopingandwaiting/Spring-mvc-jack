@@ -36,7 +36,7 @@ public class AuthenicationInteceptor extends HandlerInterceptorAdapter {
         } else if (student == null) {
             response.sendRedirect(request.getContextPath() + "/");
             return false;
-        } else if (isStuUpdate && (student.getRole().getName().equals("user"))) {
+        } else if (isStuUpdate && (!student.isAdmin())) {
             return true;
 
         } else {

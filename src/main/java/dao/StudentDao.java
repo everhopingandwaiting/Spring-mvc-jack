@@ -76,7 +76,7 @@ public class StudentDao implements Serializable {
     public List<Student> findByIds(Integer ids[]) {
         String hql = "from Student stu where stu.id in (:ids)";
         Query query = template.getSessionFactory().getCurrentSession().createQuery(hql);
-        query.setParameterList("ids", ids);
+        query.setParameter("ids", ids);
         return query.list();
 
     }

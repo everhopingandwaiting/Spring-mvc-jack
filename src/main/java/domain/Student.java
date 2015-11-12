@@ -5,10 +5,14 @@ package domain;
  */
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 
 import domain.*;
+import org.hibernate.annotations.*;
 
 
 import java.util.List;
@@ -19,7 +23,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "STUDENTS")
-
+@DynamicUpdate(value = true)
+@DynamicInsert(value = true)
 public class Student implements Serializable {
 
 
@@ -46,8 +51,14 @@ public class Student implements Serializable {
         this.password = password;
     }
 
+    //    @OneToOne( cascade = CascadeType.ALL)
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "NUMBER_ID", nullable = false)
+//@Cascade(value = {
+////        org.hibernate.annotations.CascadeType.SAVE_UPDATE,
+//        org.hibernate.annotations.CascadeType.REMOVE,org.hibernate.annotations.CascadeType.REFRESH,org.hibernate.annotations.CascadeType.MERGE
+//        ,org.hibernate.annotations.CascadeType.REPLICATE,org.hibernate.annotations.CascadeType.PERSIST})
+    @JoinColumn(name = "NUMBER_ID", nullable = false, unique = true)
+//@Column(updatable = false,insertable = false)
     private Number number;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

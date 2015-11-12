@@ -1,5 +1,8 @@
 package domain;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import java.io.Serializable;
 
 /**
@@ -11,6 +14,9 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "NUMBERS", uniqueConstraints = @UniqueConstraint(columnNames = {"PREFIX", "SUFFIX"}))
+@DynamicUpdate(value = true)
+@DynamicInsert(value = true)
+
 public class Number implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +24,7 @@ public class Number implements Serializable {
     private String prefix;
     private String suffix;
 
-    @OneToOne(mappedBy = "number")
+    @OneToOne(mappedBy = "number", targetEntity = Student.class)
     private Student student;
 
     public Student getStudent() {
