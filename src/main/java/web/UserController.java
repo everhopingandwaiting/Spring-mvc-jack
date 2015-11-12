@@ -95,7 +95,7 @@ public class UserController {
 
         ModelAndView modelAndView = new ModelAndView();
         System.out.println(s + "*************************hughfuduighdfig");
-
+        System.out.println(stureg.toString());
         Role role = new Role();
         role.setName(s);
         stureg.setRole(role);

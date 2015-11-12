@@ -21,9 +21,11 @@ public class Number implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
+    @Column(updatable = false)
     private String prefix;
+    @Column(updatable = false)
     private String suffix;
-
+    //
     @OneToOne(mappedBy = "number", targetEntity = Student.class)
     private Student student;
 

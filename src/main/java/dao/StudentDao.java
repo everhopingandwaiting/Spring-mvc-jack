@@ -1,13 +1,12 @@
 package dao;
 
-import domain.Role;
-import domain.Student;
+import domain.*;
+import domain.Number;
 import org.hibernate.Query;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -40,12 +39,19 @@ public class StudentDao implements Serializable {
     }
 
     public void update(Student student) {
+        System.out.println(student.toString() + "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
         if (student.getRole() == null) {
             Role role = new Role();
             role.setName("user");
             student.setRole(role);
         }
-
+        domain.Number number = new Number();
+        number.setID(student.getID());
+        String prefix = student.getNumber().getPrefix();
+        number.setPrefix(prefix);
+        number.setSuffix(student.getNumber().getSuffix());
+//
+        student.setNumber(number);
         template.saveOrUpdate(student);
     }
 
@@ -76,7 +82,7 @@ public class StudentDao implements Serializable {
     public List<Student> findByIds(Integer ids[]) {
         String hql = "from Student stu where stu.id in (:ids)";
         Query query = template.getSessionFactory().getCurrentSession().createQuery(hql);
-        query.setParameter("ids", ids);
+        query.setParameterList("ids", ids);
         return query.list();
 
     }

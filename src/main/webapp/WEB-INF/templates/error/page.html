@@ -16,7 +16,9 @@
     <h1>&nbsp;An error occurred.</h1>
 </div>
 <div class="col-md-offset-1 col-md-10">
-    <p th:text="${message}"/>
+    <p th:text="${#messages}"/>
+
+    <p th:text="${ErrMSG}"/>
 </div>
 
 </body>

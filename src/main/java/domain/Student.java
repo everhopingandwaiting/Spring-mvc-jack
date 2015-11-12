@@ -31,7 +31,7 @@ public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private int ID;
-
+    @Column(unique = true)
     private String name;
 
     public String getName() {
