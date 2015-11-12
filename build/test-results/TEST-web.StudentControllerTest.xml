@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="web.StudentControllerTest" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="john-Inspiron-7420" time="0.0">
+  <properties/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Nov 11, 2015 9:13:15 PM org.springframework.test.context.web.WebTestContextBootstrapper getTestExecutionListeners
+INFO: Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@53d6469e, com.github.springtestdbunit.DbUnitTestExecutionListener@857ec3e]
+]]></system-err>
+</testsuite>

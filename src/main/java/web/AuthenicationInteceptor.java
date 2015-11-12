@@ -10,7 +10,14 @@ import javax.servlet.http.HttpServletResponse;
  * Created by john on 15-10-16.
  */
 public class AuthenicationInteceptor extends HandlerInterceptorAdapter {
-
+    /**
+     *
+     * @param request
+     * @param response
+     * @param handler
+     * @return
+     * @throws Exception
+     */
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -19,7 +26,7 @@ public class AuthenicationInteceptor extends HandlerInterceptorAdapter {
         String url = request.getRequestURI();
         boolean isRoot = url.endsWith(request.getContextPath() + "/");
         boolean isLogin = url.endsWith(request.getContextPath() + "/user/login");
-
+   // jf
         boolean isRegister = url.endsWith((request.getContextPath() + "/user/register"));
         boolean isRegisterit = url.endsWith((request.getContextPath() + "/user/registerit"));
         boolean isLoginit = url.endsWith((request.getContextPath() + "/user/loginit"));
@@ -29,7 +36,7 @@ public class AuthenicationInteceptor extends HandlerInterceptorAdapter {
         } else if (student == null) {
             response.sendRedirect(request.getContextPath() + "/");
             return false;
-        } else if (url.endsWith(request.getContextPath() + "student/update") && (student.getRole().getName().equals("user"))) {
+        } else if (isStuUpdate && (student.getRole().getName().equals("user"))) {
             return true;
 
         } else {

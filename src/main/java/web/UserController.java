@@ -10,10 +10,6 @@ import service.StudentService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
  * Created by john on 15-11-6.
@@ -59,7 +55,7 @@ public class UserController {
                                     Model model,
 //                                    @RequestParam(value = "loginname",required = true)String user
                                     HttpServletRequest request) {
-//        System.out.println("*********************" + stulogin.toString()
+        System.out.println("*********************" + stulogin.toString());
 //                + "******************************************");
 //        System.out.println("**************" + request.getParameterValues("loginname") + ":::");  //  test  function
 //        String user []= request.getParameterValues("loginname");
@@ -81,7 +77,8 @@ public class UserController {
             return modelAndView;
         }
         if (!stu.isAdmin()) {
-            modelAndView.setViewName("redirect:/student/update");
+            model.addAttribute("student", stu);
+            modelAndView.setViewName("/student/update");
             return modelAndView;
         }
         modelAndView.setViewName("redirect:/user/login");

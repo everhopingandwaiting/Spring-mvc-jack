@@ -24,6 +24,7 @@ import web.formatter.Rolesformatter;
 @ComponentScan("web")
 
 public class WebConfiguration extends WebMvcConfigurerAdapter {
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         super.addViewControllers(registry);

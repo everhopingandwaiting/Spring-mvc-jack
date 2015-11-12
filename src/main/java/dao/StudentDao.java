@@ -43,7 +43,7 @@ public class StudentDao implements Serializable {
         if (student.getRole() == null) {
             Role role = new Role();
             role.setName("user");
-
+            student.setRole(role);
         }
 
         template.saveOrUpdate(student);
@@ -53,7 +53,7 @@ public class StudentDao implements Serializable {
         if (student.getRole() == null) {
             Role role = new Role();
             role.setName("user");
-
+            student.setRole(role);
         }
 
         template.saveOrUpdate(student);
@@ -76,12 +76,13 @@ public class StudentDao implements Serializable {
     public List<Student> findByIds(Integer ids[]) {
         String hql = "from Student stu where stu.id in (:ids)";
         Query query = template.getSessionFactory().getCurrentSession().createQuery(hql);
-        query.setParameter("ids", ids);
+        query.setParameterList("ids", ids);
         return query.list();
 
     }
 
     public List<Student> findByUserNameAndPwd(String name, String password) {
-        return (List<Student>) template.find("FROM Student stu where stu.name =? and stu.password = ?", name, password);
+
+        return (List<Student>) template.find("FROM Student stu where stu.name = ? and stu.password = ?", name, password);
     }
 }

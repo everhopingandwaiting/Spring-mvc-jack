@@ -23,6 +23,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 public class DaoConfig {
+
     @Bean
     public ClassDao classDao(HibernateTemplate hibernateTemplate) {
         return new ClassDao(hibernateTemplate);
@@ -66,7 +67,8 @@ public class DaoConfig {
     @Bean
     @Profile("prod")
     @Primary
-    public DataSource DataSource() { //TODO replace DriverManagerDataSource to support connection pool etc.
+    public DataSource DataSource() {
+        //TODO replace DriverManagerDataSource to support connection pool etc.
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl("jdbc:h2:tcp://localhost:9092/~/stusys");
         dataSource.setDriverClassName("org.h2.Driver");
