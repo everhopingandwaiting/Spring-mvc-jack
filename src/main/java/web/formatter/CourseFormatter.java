@@ -2,6 +2,7 @@ package web.formatter;
 
 import domain.Course;
 import org.springframework.format.Formatter;
+import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 /**
  * Created by john on 15-10-18.
  */
+@Component
 public class CourseFormatter implements Formatter<List<Course>> {
     @Override
     public List<Course> parse(String text, Locale locale) throws ParseException {

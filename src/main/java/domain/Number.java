@@ -13,7 +13,9 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "NUMBERS", uniqueConstraints = @UniqueConstraint(columnNames = {"PREFIX", "SUFFIX"}))
+@Table(name = "NUMBERS"
+//        , uniqueConstraints = @UniqueConstraint(columnNames = {"PREFIX", "SUFFIX"})
+)
 @DynamicUpdate(value = true)
 @DynamicInsert(value = true)
 

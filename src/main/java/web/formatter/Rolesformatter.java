@@ -3,6 +3,7 @@ package web.formatter;
 import domain.Course;
 import domain.Role;
 import org.springframework.format.Formatter;
+import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.util.*;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 /**
  * Created by john on 15-10-18.
  */
+@Component
 public class Rolesformatter implements Formatter<Set<Role>> {
     @Override
     public Set<Role> parse(String text, Locale locale) throws ParseException {

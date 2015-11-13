@@ -31,6 +31,7 @@ public class AuthenicationInteceptor extends HandlerInterceptorAdapter {
         boolean isRegisterit = url.endsWith((request.getContextPath() + "/user/registerit"));
         boolean isLoginit = url.endsWith((request.getContextPath() + "/user/loginit"));
         boolean isStuUpdate = url.endsWith((request.getContextPath() + "/student/update"));
+
         if (isRoot || isLogin || isRegister || isRegisterit || isLoginit) {
             return true;
         } else if (student == null) {

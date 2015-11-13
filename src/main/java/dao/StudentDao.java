@@ -45,14 +45,14 @@ public class StudentDao implements Serializable {
             role.setName("user");
             student.setRole(role);
         }
-        domain.Number number = new Number();
-        number.setID(student.getID());
-        String prefix = student.getNumber().getPrefix();
-        number.setPrefix(prefix);
-        number.setSuffix(student.getNumber().getSuffix());
+//        domain.Number number = new Number();
+//        number.setID(student.getID());
+//        String prefix = student.getNumber().getPrefix();
+//        number.setPrefix(prefix);
+//        number.setSuffix(student.getNumber().getSuffix());
 //
-        student.setNumber(number);
-        template.saveOrUpdate(student);
+//        student.setNumber(number);
+        template.merge(student);
     }
 
     public void persist(Student student) {
